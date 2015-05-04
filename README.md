@@ -1,7 +1,6 @@
 
 
 #Scripts for parallel computation
---
 
    -. Scripts for running parallel computation on Ukko cluster of the Department of Computer Science, University of Helsinki
    -. get_free_nodes.py
