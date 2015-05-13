@@ -14,7 +14,7 @@ import logging
 logging.basicConfig(format='%(asctime)s %(filename)s %(funcName)s %(levelname)s:%(message)s', level=logging.INFO)
 
 waitingtime = 30
-required_num = 110 
+required_num = 130 
 workingdir = '/cs/taatto/group/urenzyme/workspace/netscripts/'
 
 def get_free_nodes():
