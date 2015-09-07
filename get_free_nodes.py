@@ -14,8 +14,8 @@ import logging
 logging.basicConfig(format='%(asctime)s %(filename)s %(funcName)s %(levelname)s:%(message)s', level=logging.INFO)
 
 waitingtime = 30
-required_num = 130 
-workingdir = '/cs/taatto/group/urenzyme/workspace/netscripts/'
+required_num = 120 
+workingdir = '/cs/work/group/urenzyme/workspace/netscripts/'
 
 def get_free_nodes():
 	logging.info("\tObtaining nodes of good quality from UKKO cluster ...")
@@ -26,7 +26,7 @@ def get_free_nodes():
         # attemp connect and collect information
         starter = commands.getoutput('hostname')
         for i in range(0,241):
-                if i==102 or i==24:
+                if i==40:
                         continue
                 if starter.startswith('ukko'):
                         nodes.append('ukko%03d' % i)

@@ -14,7 +14,7 @@ import logging
 logging.basicConfig(format='%(asctime)s %(filename)s %(funcName)s %(levelname)s:%(message)s', level=logging.INFO)
 
 waitingtime = 30
-workingdir = '/cs/taatto/group/urenzyme/workspace/netscripts/'
+workingdir = '/cs/work/group/urenzyme/workspace/netscripts/'
 
 def kill_processes():
         nodes = []
@@ -27,7 +27,7 @@ def kill_processes():
                 else:
                         nodes.append('ukko%03d.hpc' % i)
         for node in nodes:
-                res = os.system('''ssh -o BatchMode=yes -q -o StrictHostKeyChecking=no %s 'rm /var/tmp/*; pkill -u su -f run_RS' &''' % (node))
+                res = os.system('''ssh -o BatchMode=yes -q -o StrictHostKeyChecking=no %s 'rm /var/tmp/*; pkill -u su -f single_kernel' &''' % (node))
                 time.sleep(0.1)
 	time.sleep(waitingtime)
 	os.system('pkill -u su -f "pkill"')
