@@ -22,12 +22,13 @@ def kill_processes():
         # attemp connect and collect information
         starter = commands.getoutput('hostname')
         for i in range(0,241):
+                if i==40: continue
                 if starter.startswith('ukko'):
                         nodes.append('ukko%03d' % i)
                 else:
                         nodes.append('ukko%03d.hpc' % i)
         for node in nodes:
-                res = os.system('''ssh -o BatchMode=yes -q -o StrictHostKeyChecking=no %s 'rm /var/tmp/*; pkill -u su -f single_kernel' &''' % (node))
+                res = os.system('''ssh -o BatchMode=yes -q -o StrictHostKeyChecking=no %s 'rm /var/tmp/*; pkill -u su -f single_' &''' % (node))
                 time.sleep(0.1)
 	time.sleep(waitingtime)
 	os.system('pkill -u su -f "pkill"')

@@ -26,7 +26,7 @@ def get_free_nodes():
         # attemp connect and collect information
         starter = commands.getoutput('hostname')
         for i in range(0,241):
-                if i==40:
+                if i==60:
                         continue
                 if starter.startswith('ukko'):
                         nodes.append('ukko%03d' % i)
